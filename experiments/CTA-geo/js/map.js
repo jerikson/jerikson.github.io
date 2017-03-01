@@ -7,14 +7,14 @@ var startLocation = [12.000352, 57.683341];
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/jimmyerikson/cizewlzjc009w2so1qwwzn5g4',
-  center: startLocation, zoom: 4, pitch:20,
+  center: startLocation, zoom: 4, pitch:55,
   trackResize: true, scrollZoom: false, boxZoom: false, doubleClickZoom: false,
 });
 
 map.dragPan.disable()
 
 map.on('load', function() {
-rotateBy(1);
+
   // extrude 3d from map
   map.addLayer({
     'id': '3d-buildings',
@@ -47,12 +47,15 @@ function setWindowSize() {
   el.style.with="width", width + "px";
 }
 
+window.onresize = function() {
+
   // invalidateSize()
+}
+
 
 var button = parent.document.getElementById('btn-locate');
 button.onclick = function(){
 
-  // todo: error log
   // use HTML5 geo to find user location
   navigator.geolocation.getCurrentPosition(function(position) {
 
@@ -60,12 +63,16 @@ button.onclick = function(){
     // create marker of element to display on user position
     new mapboxgl.Marker(el).setLngLat(usrLocation).addTo(map);
 
+    map.flyTo({ center: usrLocation, bearing:-180, zoom: 16,});
+
       // move camera to marker location
-      map.flyTo({ center: usrLocation, bearing:-180, zoom: 16, pitch: 60});
+      map.flyTo({ center: usrLocation, bearing:-180, zoom: 16, pitch: 0});
       el.id = "marker";
   });
 
 };
+
+
 
 
 

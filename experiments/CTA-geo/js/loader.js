@@ -10,21 +10,19 @@ var frame = document.createElement('iframe');
 frame.onload = function() {
   // new HTML DOCUMENT
   var doc = frame.contentDocument || frame.contentWindow.document;
-  var mapstyle = doc.createElement('link');
-  mapstyle.rel="stylesheet";
-  mapstyle.href="css/marker.css";
+  var mapscript = doc.createElement('link');
+  mapscript.rel="stylesheet";
+  mapscript.href="css/marker.css";
 
-  doc.head.appendChild(mapstyle);
-  
-  
-  // new script
-   // var mapscript = doc.createElement('script');
-   // mapscript.type="text/plain";
-   // mapscript.src = "https://cdn.rawgit.com/jerikson/jerikson.github.io/8c9720ec/experiments/CTA-geo/js/map.js";
- 
-  //  doc.head.appendChild(mapscript);
+  doc.head.appendChild(mapscript);
 
-  
+  ['js/mapbox-gl.js', 'js/map.js'].forEach(function(src) {
+    var s = doc.createElement('script');
+    s.src = src; s.async = false; // defer/async to load framework before map.js
+    doc.head.appendChild(s);
+  });
+
+
   // hardcode new div to hold map, placed inside the iframe
   var div = doc.createElement('div');
   div.id='map';

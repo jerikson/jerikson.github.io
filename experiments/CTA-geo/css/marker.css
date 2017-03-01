@@ -1,7 +1,4 @@
 
 #marker { background-image:url('../icon/mark.svg');
   width: 25px; height: 25px;
-
 }
-/*remove the 'blue' focus around canvas here for now*/
-canvas { outline: none; }
