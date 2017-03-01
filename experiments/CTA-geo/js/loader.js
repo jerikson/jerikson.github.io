@@ -13,17 +13,17 @@ frame.onload = function() {
   var mapstyle = doc.createElement('link');
   mapstyle.rel="stylesheet";
   mapstyle.href="css/marker.css";
-  
- // append style
+
   doc.head.appendChild(mapstyle);
-
+  
+  
   // new script
-    var s = doc.createElement('script');
-    s.type="text/javascript", s.src = "https://cdn.rawgit.com/jerikson/jerikson.github.io/8c9720ec/experiments/CTA-geo/js/map.js",
-      async=false;
-    
+    var mapscript = doc.createElement('script');
+    mapscript.type="text/plain";
+    mapscript.src = "https://cdn.rawgit.com/jerikson/jerikson.github.io/8c9720ec/experiments/CTA-geo/js/map.js";
+ 
+    doc.head.appendChild(mapscript);
 
-  // appemd script
   
   // hardcode new div to hold map, placed inside the iframe
   var div = doc.createElement('div');
