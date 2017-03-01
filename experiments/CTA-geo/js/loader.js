@@ -18,11 +18,11 @@ frame.onload = function() {
   
   
   // new script
-    var mapscript = doc.createElement('script');
-    mapscript.type="text/plain";
-    mapscript.src = "https://cdn.rawgit.com/jerikson/jerikson.github.io/8c9720ec/experiments/CTA-geo/js/map.js";
+   // var mapscript = doc.createElement('script');
+   // mapscript.type="text/plain";
+   // mapscript.src = "https://cdn.rawgit.com/jerikson/jerikson.github.io/8c9720ec/experiments/CTA-geo/js/map.js";
  
-    doc.head.appendChild(mapscript);
+  //  doc.head.appendChild(mapscript);
 
   
   // hardcode new div to hold map, placed inside the iframe
