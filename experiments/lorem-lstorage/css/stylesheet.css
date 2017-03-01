@@ -13,34 +13,92 @@ FONTS:
 -   header
 */
 
-
 /*
-  lägger huvudklasserna för uppgiften här så blir det enklare att se!
+lägger huvudklasserna för uppgiften här så blir det enklare att se!
 */
+
 .span-remove {
-  border-radius: 50%;
-  border-style: solid;
-  background:transparent;
+color: white;
+font-size: 9;
+
 }
 
 .span-remove:hover {
-  cursor: pointer;
-  color: red;
+  cursor:pointer;
+  box-shadow: 0 5px #119e4d;
+
 }
 
 
-  .span-modify {
-    display: inline-block;
-  }
+.label-txt {
+  color: white;
+  font-weight: bold;
+  cursor: text;
+}
 
-  .span-modify {
-    display: inline-block;
-  }
+.label-txt:hover {
+  color: #e0e0e0;
+}
 
 
-  input[type="text"]:disabled {
-    display: none;
-  }
+/* Button SUBMIT */
+.btnS {
+  background: #17aa56;
+  color: #fff;
+  padding: 0 10px;
+  border-radius:7px;
+  background: #17aa56;
+  box-shadow: 0 4px #119e4d;
+  border: none;
+  cursor: pointer;
+}
+
+.btns:hover {
+  box-shadow:0 6px #119e4d;
+  top: 2px;
+}
+
+/* Lorem (h4) */
+.lorem {
+color:white;
+  text-shadow: 0 1px hsl(0,0%, 85%),
+               0 2px hsl(0,0%, 80%),
+               0 3px hsl(0,0%, 75%),
+               0 4px hsl(0,0%, 70%),
+               0 5px hsl(0,0%, 65%),
+               0 5px 10px #119e4d;
+}
+
+.list-group {
+  padding-left: 0;
+  margin-bottom: 20px;
+
+}
+
+.list-group-item {
+  text-shadow: 0 1px hsl(0,0%, 85%),
+               0 2px hsl(0,0%, 80%),
+               0 3px hsl(0,0%, 75%),
+               0 4px hsl(0,0%, 70%),
+               0 5px hsl(0,0%, 65%),
+               0 5px 10px black;
+}
+
+.list-group-item:hover{
+cursor: text;
+
+}
+
+
+.span-modify {
+  display: inline-block;
+}
+
+input[type="text"]:disabled {
+  display: none;
+}
+
+
 
 /*  NODES  */
 html {
@@ -62,8 +120,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
-  outline: none;
+  background: #2ac56c;
 }
 
 a {
@@ -73,7 +130,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #8678df;
+  /*color: #8678df*/
   text-decoration: underline;
 }
 
@@ -88,8 +145,8 @@ form {
 hr {
   margin: 20px 0;
   border: 0;
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #89867e;
 }
 
 img {
@@ -137,16 +194,15 @@ input[type="reset"],
 input[type="submit"],
 input[type="radio"],
 input[type="checkbox"] {
-  cursor: pointer;
-  -webkit-appearance: button;
+
 
 }
 
 input[type="search"],
 input[type=text] {
-    outline: none;
-    padding: 3px 0px 3px 3px;
-    border: 1px solid #DDDDDD;
+  outline: none;
+  padding: 2px 2px 2px 2px;
+  box-shadow:0 5px #89867e
 
 }
 
@@ -222,34 +278,6 @@ h6, .h6 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-
-.list-group {
-  padding-left: 0;
-  margin-bottom: 20px;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.list-group-item {
-  position: relative;
-  margin-bottom: -1px;
-  border-style:none;
-  color:inherit;
-}
-
-.list-group-item:hover{
-  color: #8678df;
-  text-decoration: none;
 }
 
 .table {

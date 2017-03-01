@@ -29,4 +29,5 @@ console.info('ok!');
     "\n Checkout: https://updatemybrowser.org/" );
     //window.close();
   }
+  submit_lstorage_item();
 }

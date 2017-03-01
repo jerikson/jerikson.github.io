@@ -51,7 +51,7 @@ function display_lstorage_item() {
     '<li class = "list-group-item">' +
       '<label  id="text' + i  + '" class="label-txt">' +lStorageArray[i]+ '</label>' +
       '<input onSelect="blur" id="input' + i  + '"   class = "span-modify" type="text" disabled> </input>' +
-      '<span class = "span-remove"> x  </span>' +
+      '<span class = "span-remove">  ❌  </span>' +
     '</li>';
 
   };
@@ -74,7 +74,6 @@ function display_lstorage_item() {
   };
 
 
-
 // add click-listeners itemlist
   var el_Li = document.getElementsByClassName('list-group-item');
   for (let i=0; i < el_Li.length; i++) {
@@ -84,38 +83,14 @@ function display_lstorage_item() {
         child.focus();
         child.value = target.innerText;
 
-      child.addEventListener('blur', function() {
-        child.disabled="true";
-        toggles(target, "hidden")
-      });
-
+      child.addEventListener('blur', function() { child.disabled="true"});
     });
   };
 
-
-// add click-listener to text node of itemlist
-  var el_Label = document.getElementsByClassName('label-txt');
-  for (let i=0; i < el_Label.length; i++) {
-      el_Label[i].addEventListener('click', () => {
-  //      document.querySelectorAll()
-      })
-  };
 }
 
 
 function clear_lstorage() {
   window.localStorage.clear();
   location.reload();
-}
-
-function toggles(el, class1) {
-  var classes = el.className,
-  regex = new RegExp('\\b' + class1 + '\\b'),
-  hasOne = classes.match(regex);
-
-  class1 = class1.replace(/\s+/g, '');
-  if (hasOne)
-    el.className = classes.replace(regex, '');
-  else
-    el.className = classes + class1;
 }
