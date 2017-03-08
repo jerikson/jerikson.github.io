@@ -1,4 +1,4 @@
-const url = "http://forverkliga.se/JavaScript/api/simple.php?";
+const url = "https://forverkliga.se/JavaScript/api/simple.php?";
 const sct = document.getElementById('select');
 const btn = document.getElementById('btn_select');
 const res = document.getElementById('results');
