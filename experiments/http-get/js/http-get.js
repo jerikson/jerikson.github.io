@@ -3,6 +3,9 @@ const sct = document.getElementById('select');
 const btn = document.getElementById('btn_select');
 const res = document.getElementById('results');
 btn.addEventListener('click', getjObj);
+let popW = 0;
+let popM = 0;
+let popF = 0;
 
 function getjObj() {
 
@@ -41,7 +44,7 @@ function getjObj() {
         }
       }
     }
-
+columns.push('pMale');
     // use content of columns as table heads */
     for (let i = 0; i < columns.length; i++) {
       const table_head = document.createElement("th");
@@ -57,6 +60,9 @@ function getjObj() {
         // populate table
         table_tcell.innerHTML = items[key][columns[i]];
       }
+      popW += ( items[key][columns[2]] )
+      popM = (1) - items[key][columns[3]]
+      table_row.childNodes[4].innerHTML = (1) - items[key][columns[3]]
     }
 
     /* diable button and bubble click events
@@ -64,6 +70,8 @@ function getjObj() {
     if (columns.length) {
       btn.setAttribute("disabled", "true");
       res.addEventListener('click', info);
+
+      console.info("total population: " + popW)
     }
   }); // then
 
