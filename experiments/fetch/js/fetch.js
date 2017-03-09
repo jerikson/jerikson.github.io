@@ -1,4 +1,4 @@
-const url = 'http://forverkliga.se/JavaScript/api/simple.php?world';
+const url = 'https://forverkliga.se/JavaScript/api/simple.php?world';
 const btn = document.getElementById('btn_fetch');
 const fetched = document.getElementById("fetched");
 const dscript = document.createElement('SCRIPT');
