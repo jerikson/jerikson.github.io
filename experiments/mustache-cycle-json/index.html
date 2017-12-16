@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>js json jquery mustache carousel</title>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <div class="container">
+    <div id ="userbox">
+      <!-- Next & Previous -->
+      <a href="#" id="prev_btn">&laquo;</a>
+      <a href="#" id="next_btn">&raquo;</a>
+      <div id="carousel"></div>
+    </div>
+
+    <!--Mustache.js template-->
+    <script id="userstemplate" type="text/template">
+      {{#users}}
+      <div class="user">
+        <img src="images/{{name}}.png" alt="avatar {{name}}" />
+        <h3>{{name}}</h3>
+        <h5>{{location}}</h5>
+        <p>{{bio}}</p>
+      </div>
+      {{/users}}
+    </script>
+
+  </div>
+</body>
+<script src="jquery.js"></script>
+<script src="cycle.js"></script>
+<script src="mustache.js"></script>
+<script src="script.js"></script>
+</html>

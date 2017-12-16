@@ -1,0 +1,62 @@
+body {
+  font-family: 'Libre Baskerville';
+}
+
+.user {
+  background-color: white;
+}
+
+#userbox {
+  width: 300px;
+  margin: 0 auto;
+  padding: 1px;
+  border-radius: 10px;
+
+}
+
+#userbox h3, #userbox h5 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+#userbox h3 {
+  font-size: 2em;
+  line-height: 0.9em;
+}
+
+#userbox h5 {
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+#userbox img {
+  float: right;
+  margin-left: 10px;
+  border-radius: 10px;
+  width: 100px;
+}
+
+#userbox p {
+  color: #1E3A40;
+  font-size: .9em;
+}
+
+/* Buttons */
+#userbox #next_btn, #userbox #prev_btn {
+  font-size: 1.5em;
+  background: #F5F5F5;
+  margin: 10px 0px;
+  border-radius: 10px;
+}
+
+/* Button links */
+#userbox a#next_btn, #userbox a#prev_btn {
+  text-decoration: none;
+  
+
+}
+
+.container {
+
+}
