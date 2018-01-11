@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>react component state</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
+<script type="text/babel">
+
+// this could be like ...
+/*
+  function StopWatch({lapse, running}) {
+    return (
+      <div
+        style={{textAlign: 'center'}}
+        className="container">
+        <br /><label>{lapse}ms</label><br />
+        <button className="btn-success">{running ? 'Stop' : 'Start'}</button>
+        <button className="btn-danger">clear</button>
+      </div>
+    )
+  }
+  const element = (
+    <StopWatch running={false} lapse={0}/>
+  )
+*/
+
+// this React class
+class StopWatch extends React.Component {
+  state = {lapse: 0, running: false} //this.setState({lapse: 1, running: true})
+
+  handleRunClick = () => {
+    this.setState(state => {
+      if(state.running) {
+        clearInterval(this.timer)
+      } else {
+        const startTime  = Date.now() - this.state.lapse
+        this.timer = setInterval(() => {
+          this.setState({
+            lapse: Date.now() - startTime}
+          )}
+      )}
+      return {running: !state.running}
+    })
+  }
+
+    handleClearClick = () => {
+      this.setState({lapse: 0, running: false})
+    }
+
+  render() {
+    const {lapse, running} = this.state; /*= this.props;*/
+    return (
+      <div style={{textAlign: 'center'}} className="container">
+        <br /><label>{lapse}ms</label><br />
+        <button onClick={this.handleRunClick} className="btn-success">{running ? 'Stop' : 'Start'}</button>
+        <button onClick={this.handleClearClick} className="btn-danger">clear</button>
+      </div>
+    )
+  }
+}
+const element = (
+  <StopWatch />
+)
+
+
+ ReactDOM.render(element, document.getElementById('root'))
+</script>
