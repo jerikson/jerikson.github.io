@@ -1,0 +1,55 @@
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<!--<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/cjs/react-dom-server.browser.production.min.js"></script>-->
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+<div id ="root"></div>
+<script type="text/babel">
+const rootElement = document.getElementById('root');
+
+function SayHello(props) {
+  return (
+    <div>
+      Hello {props.firstName} {props.lastName} !
+    </div>
+  )};
+
+// add "prop-types via cdn instead of this https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"
+/*
+const PropTypes = {
+  string(props, propName, componentName) {
+    if (typeof props[propName] !== 'string') {
+      return new Error (
+        `Hey you should pass a string for ${propName} in ${componentName}
+        but you passed a ${typeof props[propName]}!`);
+    }
+  }
+}
+*/
+
+// Props are not required by default, they are optional
+// warnings will dissappear in production of react, it does't use PropTypes
+SayHello.propTypes = {
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+}
+
+
+class SayHelloAsClass extends React.Component {
+  static propTypes = {
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+  }
+  render() {
+    const {firstName, lastName} = this.props
+    return (
+      <div>
+        Hello {firstName} {lastName}!
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<SayHello firstName={"John"} lastName={"Doe"} />, document.getElementById('root'));
+</script>

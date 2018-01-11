@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>react component styling</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+  <body>
+      <div id="root"></div>
+</body>
+</html>
+<script type="text/babel">
+
+//This could be ..
+/*
+function Box({props}) {
+  return(
+    <div
+      className="box box--small" style={{paddingLeft: 20}}
+      {...props}
+    />
+  )
+}
+*/
+// Like this..
+function Box({style, size, className='', ...rest}) {
+  const sizeClassName = size ? `--${size}` : '';
+  return(
+    <div
+      className={`box${className}${sizeClassName}`}
+      style={{paddingLeft: 20, ...style}}
+      {...rest}
+    />
+  )
+}
+
+const element = (
+  <div>
+    <Box
+      size="low"
+      style={{backgroundColor: '#43A047'}}>
+      <br />
+        Priority low
+    </Box>
+
+    <Box
+      size="medium"
+      style={{backgroundColor: '#FB8C00'}}>
+      <br />
+        Priority medium
+    </Box>
+
+    <Box
+      size="high"
+      style={{backgroundColor: '#E53935'}}>
+      <br />
+        Priority high
+    </Box>
+  </div>
+)
+
+ReactDOM.render(element, document.getElementById('root'));
+</script>
+
+<style>
+#root{
+  font-family: monospace;
+  background-color: #546E7A;
+}
+.box--low {
+  width: 200;
+  height: 40px;
+}
+
+.box--medium {
+  width: 300px;
+  height: 40px;
+}
+
+.box--high {
+  width: 400px;
+  height: 40px;
+}
+</style>
