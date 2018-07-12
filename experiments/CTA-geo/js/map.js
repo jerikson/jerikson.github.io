@@ -52,7 +52,6 @@ function setWindowSize() {
 var button = parent.document.getElementById('btn-locate');
 button.onclick = function(){
 
-  // todo: error log
   // use HTML5 geo to find user location
   navigator.geolocation.getCurrentPosition(function(position) {
 
