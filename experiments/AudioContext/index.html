@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+   </head>
+   <body>
+      <container class="container text-center">
+         <p id="txtFreq">Frequency: 40</p>
+
+         <div>
+            <input class="slider" id="slideFreq" type="range" value="40" min="0" max="1025" />
+            <input class="btn btn-small btn-info" id="btnControl" type="button" value="🔉">
+         </div>
+
+         <form id="formControl">
+            <label>
+              <input type="radio" name="radioWaveType" value="sine" checked>sine</input>
+              <img src="img/sine.png">
+            </label>
+            <label>
+              <input type="radio" name="radioWaveType" value="square">square</input>
+              <img src="img/square.png">
+            </label>
+            <label>
+              <input type="radio" name="radioWaveType" value="sawtooth">sawtooth</input>
+              <img src="img/sawtooth.png">
+            </label>
+            <label>
+              <input type="radio" name="radioWaveType" value="triangle">triangle</input>
+              <img src="img/triangle.png">
+            </label>
+         </form>
+
+      </container>
+   </body>
+   <script src="js/app.js"></script>
+</html>
