@@ -21,6 +21,10 @@ label > input:checked + img{
 
 img {
   border: 0;
+  width: 100%;
+  height: auto;
+  max-width: 20px;
+  max-height: 20px;
 }
 
 body {
