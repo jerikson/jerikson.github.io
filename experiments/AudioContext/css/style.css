@@ -21,8 +21,6 @@ label > input:checked + img{
 
 img {
   border: 0;
-  width: 20px;
-  height: 20px;
 }
 
 body {
